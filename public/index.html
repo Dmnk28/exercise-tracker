@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <link rel="icon" type="image/png" href="./public/favicon.png">
+    <link rel="stylesheet" href="./public/styles/main.css"/>
+
+
+    <title>Exercise Tracker Microservice</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Exercise Tracker Microservice</h1>
+      <p>This Microservice stores given users and logs their exercises in a MongoDB-Database and returns an overview over their work if requested by a certain query string.</p>
+      <p>Since this is a freeCodeCamp-Project of mine it is limited in functionality to the tasks demanded by the corresponding <a href="https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker" title="freeCodeCamp tasks for the exercise tracker project" target="_blank">certification project</a>.</p>
+      
+      <form name="user-form" action="/api/users" method="post">
+        <input name="user" id="user-input" type="text" placeholder="username">
+        <button name="send-user" id="user-btn" type="submit">Create User</button>
+      </form>
+
+      <form name="exercise-form" action="/api/users/:id/exercises" method="post">
+        <input name="id" id="id-input" type="text" placeholder=":_id">
+        <input name="description" id="description-input" type="text" placeholder="Description">
+        <input name="duration" id="duration-input" type="number" placeholder="Duration">
+        <input name="Date" id="date-input" type="date" placeholder="Date">
+        <button name="send-exercise" id="exercise-btn" type="submit">Submit</button>
+      </form>
+
+    </main>
+</body>
+</html>
