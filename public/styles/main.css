@@ -9,6 +9,7 @@ body {
 }
 
 main {
+  width: clamp(300px, 60vw, 1000px);
   margin: 3rem;
   padding: 1.5rem 2.5rem;
   background-color: hsl(217, 19%, 24%);
@@ -16,12 +17,56 @@ main {
 }
 
 a {
-  color: hsl(295, 100%, 66%);
+  color: hsl(177, 94%, 69%);
   text-decoration: none;
 }
-/* 
-$clr-primary: hsl(193, 38%, 86%);
-$clr-secondary: hsl(150, 100%, 66%);
-$clr-text-bgr: hsl(217, 19%, 24%);
-$clr-bgr: hsl(218, 23%, 16%);
-$clr-tertiary: hsl(217, 19%, 38%); */
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+form > input, button {
+  padding: .5rem;
+  border: none;
+  border-radius: .5rem;
+}
+
+form > input {
+  margin-bottom: .5rem;
+  padding-inline: .75rem;
+}
+
+form > button {
+  margin-top: 1rem;
+  width: 66%;
+  align-self: center;
+  background-color: hsl(177, 94%, 69%);
+  transition: all .5s ease-in-out;
+  border: 1px solid hsl(177, 94%, 69%);
+}
+
+form > button:hover {
+  cursor: pointer;
+  background-color: hsl(217, 19%, 24%);
+  color: hsl(177, 94%, 69%);
+  border: 1px solid hsl(177, 94%, 69%);
+}
+
+#user-form {
+  width: clamp(230px, 25vw, 500px);
+  align-items: center;
+  margin-inline: auto;
+  border: 1px solid hsl(193, 38%, 86%);
+  border-radius: .5rem;
+  padding-block-end: 2rem;
+}
+
+#user-form > label {
+  justify-self: left;
+}
+
+#user-form > button {
+  width: 30%;
+}

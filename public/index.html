@@ -17,15 +17,22 @@
       <p>This Microservice stores given users and logs their exercises in a MongoDB-Database and returns an overview over their work if requested by a certain query string.</p>
       <p>Since this is a freeCodeCamp-Project of mine it is limited in functionality to the tasks demanded by the corresponding <a href="https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker" title="freeCodeCamp tasks for the exercise tracker project" target="_blank">certification project</a>.</p>
       
-      <form name="user-form" action="/api/users" method="post">
+      <form id="user-form" name="user-form" action="/api/users" method="post">
+        <h2>Create a new User</h2>
+        <label for="user-input">Username:</label>
         <input name="user" id="user-input" type="text" placeholder="username">
         <button name="send-user" id="user-btn" type="submit">Create User</button>
       </form>
 
-      <form name="exercise-form" action="/api/users/:id/exercises" method="post">
+      <form name="exercise-form" id="exercise-form" action="/api/users/:id/exercises" method="post">
+        <h2>Log an exercise session</h2>
+        <label for="id-input">User ID:</label>
         <input name="id" id="id-input" type="text" placeholder=":_id">
+        <label for="desciption-input">Exercise Description:</label>
         <input name="description" id="description-input" type="text" placeholder="Description">
+        <label for="duration-input">Duration:</label>
         <input name="duration" id="duration-input" type="number" placeholder="Duration">
+        <label for="date-input">Date:</label>
         <input name="Date" id="date-input" type="date" placeholder="Date">
         <button name="send-exercise" id="exercise-btn" type="submit">Submit</button>
       </form>
