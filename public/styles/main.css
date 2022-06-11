@@ -27,18 +27,18 @@ form {
   margin-top: 2rem;
 }
 
-form > input, button {
+input, button {
   padding: .5rem;
   border: none;
   border-radius: .5rem;
 }
 
-form > input {
+input {
   margin-bottom: .5rem;
   padding-inline: .75rem;
 }
 
-form > button {
+button {
   margin-top: 1rem;
   width: 66%;
   align-self: center;
@@ -47,7 +47,7 @@ form > button {
   border: 1px solid hsl(177, 94%, 69%);
 }
 
-form > button:hover {
+button:hover {
   cursor: pointer;
   background-color: hsl(217, 19%, 24%);
   color: hsl(177, 94%, 69%);
@@ -63,10 +63,12 @@ form > button:hover {
   padding-block-end: 2rem;
 }
 
-#user-form > label {
-  justify-self: left;
-}
-
 #user-form > button {
   width: 30%;
+}
+
+.centered-text-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
