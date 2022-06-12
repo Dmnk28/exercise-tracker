@@ -1,7 +1,10 @@
-const path = require('path');
+import path from 'path';
+import * as url from 'url';
+
+const dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const rootHandler = (req, res) => {
-    res.sendFile(path.join(__dirname, '/../public/index.html'));
+    res.sendFile(path.join(dirname, '/../public/index.html'));
 }
 
-module.exports = rootHandler;
+export default rootHandler;

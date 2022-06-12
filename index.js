@@ -1,34 +1,40 @@
 ///////////////////
 /* Configuration */
 ///////////////////
-const express = require('express');
+import express from 'express';
 const app     = express();
 const port    = 3000;
 
 /* Set up Mongoose and Connect mongoDB */
-const connectMongoDB = require('./config/mongoDB');
-// const UrlSet         = require('./models/urlSet');
+import connectMongoDB from './config/mongoDB.js'
 connectMongoDB();
 
 /* Middleware */
+import checkUserAlreadyExists from './middlewares/checkUserAlreadyExists.js';
 
 /* Handlers */
-const rootHandler     = require('./handlers/rootHandler');
-const faviconHandler  = require('./handlers/faviconHandler');
+import rootHandler from './handlers/rootHandler.js';
+import faviconHandler from './handlers/faviconHandler.js';
+import usersHandler from './handlers/usersHandler.js';
 
 /* Use cors so the project is testable by freeCodeCamp */
-const cors = require('cors');
+import cors from 'cors';
 
 /////////////
 /* Routing */
 /////////////
+import * as url from 'url';
+const dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/public', express.static(dirname + '/public'));
 
 app.get('/', rootHandler);
 app.get('/favicon.ico', faviconHandler)
+
+app.post('/api/users', checkUserAlreadyExists, usersHandler);
 
 //////////////
 /* Listener */
