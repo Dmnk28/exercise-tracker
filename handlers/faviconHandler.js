@@ -1,7 +1,10 @@
-const path = require('path');
+import path from 'path';
+import * as url from 'url';
+
+const dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const faviconHandler = (req, res) => {
-    res.sendFile(path.join(__dirname, '/../public/favicon.ico'))
+    res.sendFile(path.join(dirname, '/../public/favicon.ico'))
 }
 
-module.exports = faviconHandler;
+export default faviconHandler;
