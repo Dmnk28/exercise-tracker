@@ -1,5 +1,4 @@
 import findUserByName from "../services/findUserByName.js";
-// const findUserByName = require("../services/findUserByName");
 
 const checkUserAlreadyExists = async (req, res, next) => {
     const user = await findUserByName(req.body.username);
@@ -14,4 +13,3 @@ const checkUserAlreadyExists = async (req, res, next) => {
 }
 
 export default checkUserAlreadyExists;
-// module.exports = checkUserAlreadyExists;

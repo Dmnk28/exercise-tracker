@@ -1,9 +1,6 @@
 import User from '../models/user.js';
 import { nanoid } from 'nanoid';
 
-// const { nanoid } = require('nanoid');
-// const User = require('../models/user');
-
 const createUser = async (nameToGive) => {
     const user = await new User({
         username: nameToGive,
