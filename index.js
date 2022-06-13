@@ -17,6 +17,7 @@ import rootHandler from './handlers/rootHandler.js';
 import faviconHandler from './handlers/faviconHandler.js';
 import usersHandler from './handlers/usersHandler.js';
 import exerciseHandler from './handlers/exerciseHandler.js';
+import displayAllUsersHandler from './handlers/displayAllUsersHandler.js';
 
 /* Use cors so the project is testable by freeCodeCamp */
 import cors from 'cors';
@@ -34,6 +35,7 @@ app.use('/public', express.static(dirname + '/public'));
 
 app.get('/', rootHandler);
 app.get('/favicon.ico', faviconHandler)
+app.get('/api/users', displayAllUsersHandler)
 
 app.post('/api/users', checkUserAlreadyExists, usersHandler);
 app.post('/api/users/:_id/exercises', exerciseHandler)
