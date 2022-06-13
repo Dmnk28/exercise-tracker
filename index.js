@@ -16,6 +16,7 @@ import checkUserAlreadyExists from './middlewares/checkUserAlreadyExists.js';
 import rootHandler from './handlers/rootHandler.js';
 import faviconHandler from './handlers/faviconHandler.js';
 import usersHandler from './handlers/usersHandler.js';
+import exerciseHandler from './handlers/exerciseHandler.js';
 
 /* Use cors so the project is testable by freeCodeCamp */
 import cors from 'cors';
@@ -35,7 +36,7 @@ app.get('/', rootHandler);
 app.get('/favicon.ico', faviconHandler)
 
 app.post('/api/users', checkUserAlreadyExists, usersHandler);
-
+app.post('/api/users/:_id/exercises', exerciseHandler)
 //////////////
 /* Listener */
 //////////////

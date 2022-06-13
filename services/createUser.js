@@ -1,10 +1,9 @@
 import User from '../models/user.js';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 
 const createUser = async (nameToGive) => {
     const user = await new User({
-        username: nameToGive,
-        _id: nanoid()
+        username: nameToGive
     });
     user.save();
     return {

@@ -7,10 +7,19 @@ const userSchema = new Schema ({
     type: String, 
     required: true
   },
-  _id: {
-    type: String, 
-    required: true
-  }
+  log: [
+    {
+      description: {
+        type: String
+      },
+      duration: {
+          type: Number
+      },
+      date: {
+          type: String
+      }
+    },
+  ]
 });
 
 export default mongoose.model('User', userSchema);

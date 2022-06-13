@@ -26,16 +26,16 @@
         <button name="send-user" id="user-btn" type="submit">Create User</button>
       </form>
 
-      <form name="exercise-form" id="exercise-form" action="/api/users/:id/exercises" method="post">
+      <form name="exercise-form" id="exercise-form" action="/api/users/:_id/exercises" method="post">
         <h2>Log an exercise session</h2>
         <label for="id-input">User ID:</label>
-        <input name="id" id="id-input" type="text" placeholder=":_id">
+        <input name="userId" id="id-input" type="text" placeholder=":_id" required>
         <label for="desciption-input">Exercise Description:</label>
         <input name="description" id="description-input" type="text" placeholder="Description">
         <label for="duration-input">Duration:</label>
         <input name="duration" id="duration-input" type="number" placeholder="Duration">
         <label for="date-input">Date:</label>
-        <input name="Date" id="date-input" type="date" placeholder="Date">
+        <input name="date" id="date-input" type="date" placeholder="Date">
         <button name="send-exercise" id="exercise-btn" type="submit">Submit</button>
       </form>
 
