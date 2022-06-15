@@ -26,6 +26,7 @@ import cors from 'cors';
 /* Routing */
 /////////////
 import * as url from 'url';
+import userLogHandler from './handlers/userLogHandler.js';
 const dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 app.use(cors());
@@ -36,6 +37,7 @@ app.use('/public', express.static(dirname + '/public'));
 app.get('/', rootHandler);
 app.get('/favicon.ico', faviconHandler)
 app.get('/api/users', displayAllUsersHandler)
+app.get('/api/users/:_id/logs', userLogHandler)
 
 app.post('/api/users', checkUserAlreadyExists, usersHandler);
 app.post('/api/users/:_id/exercises', exerciseHandler)
