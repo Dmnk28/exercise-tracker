@@ -1,9 +1,10 @@
-import createExercise from "../services/updateExerciseLog.js";
+import updateExerciseLog from "../services/updateExerciseLog.js";
 
 const exerciseHandler = async (req, res) => {
-    const exercise = await createExercise(req.body.userId, req.body.description, req.body.duration, req.body.date);
+    const exerciseDate = new Date(req.body.date);
+    const exercise = await updateExerciseLog(req.body.userId, req.body.description, req.body.duration, exerciseDate);
     if (exercise) {
-        return res.json(exercise);
+        return res.json(exercise);  // exercise already contains information about the user
     } else {
         return console.log('Please check your UserID. This one is not known to the Database.');
     }
