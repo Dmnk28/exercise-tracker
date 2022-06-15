@@ -12,7 +12,7 @@ const updateExerciseLog = async (userId, descriptionToStore, durationToStore, da
     const exercise = {
         description: descriptionToStore,
         duration: durationToStore,
-        date: new Date(dateToStore).toDateString(),
+        date: dateToStore.toUTCString(),
     };
 
     const user = await User.findById({_id: userId});
@@ -21,7 +21,9 @@ const updateExerciseLog = async (userId, descriptionToStore, durationToStore, da
         user.save();
         return {
             username: user.username,
-            ...exercise,
+            desciption: exercise.description,
+            duration: exercise.duration,
+            date: new Date(exercise.date).toDateString(),
             _id: user._id
         };
     } else {
