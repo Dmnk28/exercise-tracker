@@ -39,13 +39,7 @@
         <button name="send-exercise" id="exercise-btn" type="submit">Submit</button>
       </form>
     </main>
-    <script>
-      const exerciseForm = document.getElementById('exercise-form');
-      exerciseForm.addEventListener('submit', () => {
-        const userId = document.getElementById('id-input').value;
-        exerciseForm.action = `/api/users/${userId}/exercises`;
-        exerciseForm.submit();
-      })
-    </script>
+    
+    <script src="./public/scripts/exerciseFormActionGenerator.js"></script>
 </body>
 </html>
