@@ -26,19 +26,26 @@
         <button name="send-user" id="user-btn" type="submit">Create User</button>
       </form>
 
-      <form name="exercise-form" id="exercise-form" action="/api/users/:_id/exercises" method="post">
+      <form name="exercise-form" id="exercise-form" method="post">
         <h2>Log an exercise session</h2>
         <label for="id-input">User ID:</label>
-        <input name="userId" id="id-input" type="text" placeholder=":_id" required>
+        <input name=":_id" id="id-input" type="text" placeholder=":_id" >
         <label for="desciption-input">Exercise Description:</label>
         <input name="description" id="description-input" type="text" placeholder="Description">
         <label for="duration-input">Duration:</label>
         <input name="duration" id="duration-input" type="number" placeholder="Duration">
         <label for="date-input">Date:</label>
-        <input name="date" id="date-input" type="date" placeholder="Date">
+        <input name="date" id="date-input" type="text" placeholder="Date">
         <button name="send-exercise" id="exercise-btn" type="submit">Submit</button>
       </form>
-
     </main>
+    <script>
+      const exerciseForm = document.getElementById('exercise-form');
+      exerciseForm.addEventListener('submit', () => {
+        const userId = document.getElementById('id-input').value;
+        exerciseForm.action = `/api/users/${userId}/exercises`;
+        exerciseForm.submit();
+      })
+    </script>
 </body>
 </html>

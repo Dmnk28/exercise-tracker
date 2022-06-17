@@ -11,6 +11,8 @@ connectMongoDB();
 
 /* Middleware */
 import checkUserAlreadyExists from './middlewares/checkUserAlreadyExists.js';
+import checkDateInput from './middlewares/checkDateInput.js'
+import  logRequests from  './middlewares/logRequests.js'
 
 /* Handlers */
 import rootHandler from './handlers/rootHandler.js';
@@ -35,12 +37,12 @@ app.use(express.json());
 app.use('/public', express.static(dirname + '/public'));
 
 app.get('/', rootHandler);
-app.get('/favicon.ico', faviconHandler)
-app.get('/api/users', displayAllUsersHandler)
-app.get('/api/users/:_id/logs', userLogHandler)
+app.get('/favicon.ico', faviconHandler);
+app.get('/api/users', logRequests, displayAllUsersHandler);
+app.get('/api/users/:_id/logs', logRequests, userLogHandler);
 
-app.post('/api/users', checkUserAlreadyExists, usersHandler);
-app.post('/api/users/:_id/exercises', exerciseHandler)
+app.post('/api/users', logRequests, checkUserAlreadyExists, usersHandler);
+app.post('/api/users/:_id/exercises', logRequests, checkDateInput, exerciseHandler);
 //////////////
 /* Listener */
 //////////////

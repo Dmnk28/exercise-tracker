@@ -60,7 +60,7 @@ button:hover {
   margin-inline: auto;
   border: 1px solid hsl(193, 38%, 86%);
   border-radius: .5rem;
-  padding-block-end: 2rem;
+  padding: 0 1rem 2rem 1rem;
 }
 
 #user-form > button {

@@ -20,11 +20,11 @@ const updateExerciseLog = async (userId, descriptionToStore, durationToStore, da
         user.log.push(exercise)
         user.save();
         return {
+            _id: user._id,
             username: user.username,
-            desciption: exercise.description,
-            duration: exercise.duration,
             date: new Date(exercise.date).toDateString(),
-            _id: user._id
+            duration: parseInt(exercise.duration),
+            description: exercise.description
         };
     } else {
         return false

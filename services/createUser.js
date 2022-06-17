@@ -3,7 +3,8 @@ import User from '../models/user.js';
 
 const createUser = async (nameToGive) => {
     const user = await new User({
-        username: nameToGive
+        username: nameToGive/*,
+        _id: nanoid()*/
     });
     user.save();
     return {
