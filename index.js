@@ -6,13 +6,13 @@ const app     = express();
 const port    = 3000;
 
 /* Set up Mongoose and Connect mongoDB */
-import connectMongoDB from './config/mongoDB.js'
+import connectMongoDB from './config/mongoDB.js';
 connectMongoDB();
 
 /* Middleware */
 import checkUserAlreadyExists from './middlewares/checkUserAlreadyExists.js';
-import checkDateInput from './middlewares/checkDateInput.js'
-// import  logRequests from  './middlewares/logRequests.js'
+import checkDateInput from './middlewares/checkDateInput.js';
+// import  logRequests from  './middlewares/logRequests.js';
 
 /* Handlers */
 import rootHandler from './handlers/rootHandler.js';
@@ -48,5 +48,5 @@ app.post('/api/users/:_id/exercises', /* logRequests,  */checkDateInput, exercis
 /* Listener */
 //////////////
 app.listen(port, () => {
-  console.log(`app listening on port ${port}`)
+  console.log(`app listening on port ${port}`);
 });
