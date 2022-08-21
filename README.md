@@ -6,6 +6,8 @@ Since this is a freeCodeCamp-Project of mine it is limited in functionality to t
 
 __[check out my Solution on Replit](https://replit.com/@Dmnk28/exercise-tracker?v=1)__
 
+![Image of my project solution](./ExerciseTracker.png)
+
 ## My process
 First I started with the models (users and exercises), and handlers. Later I missinterpreted the FCC-User Stories and (kind of) joined both models together. Next time I will stay more selfconfident with my own approch (which should have worked pretty fine too, but in hindsight you are always smarter, right?). 
 I first used nanoId for Id-Generation an then found (abount half an our later) out, mongoDB always brings id's for new objects automatically. 
